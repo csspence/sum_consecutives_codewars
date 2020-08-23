@@ -20,6 +20,23 @@ consecutives 3 is 6 ..."""
 [-5,-5,7,7,12,0] # should return [-10,14,12,0]
 */
 
-function sumConsecutives(s) {
-    // your code
+const sumConsecutives = (s) => {
+  let obj = {};
+  let obj2 = {};
+  let array = [];
+  for(let i = 0; i < s.length; i++) {
+    if(obj[s[i]] === undefined) {
+      obj[s[i]] = s[i];
+    } else {
+      obj[s[i]] = obj[s[i]] + s[i];
+    }
+  }
+  for(let i = 0; i < s.length; i++) {
+    if(obj2[s[i]] === undefined) {
+      array.push(obj[s[i]]);
+      obj2[s[i]] === 'done';
+    }
+  }
+
+  return array;
 }
